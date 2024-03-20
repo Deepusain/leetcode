@@ -16,13 +16,13 @@ public:
             
         
         ListNode* qtr = list1;
-        for (int i = 0; i < b + 1; ++i) qtr = qtr->next;
+        for (int i = 0; i < b; ++i) qtr = qtr->next;
             
         
         ptr->next = list2;
         while (list2->next) list2 = list2->next;
             
-        list2->next = qtr;
+        list2->next = qtr->next;
         
         return list1;
     }
