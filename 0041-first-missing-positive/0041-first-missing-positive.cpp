@@ -5,13 +5,13 @@ public:
         int i=0;
         int ans=1;
         while(i<nums.size()){
-            if(ans<nums[i]){
-                break;
-            }else if(ans>nums[i]){
+            if(ans>nums[i]){
                 i++;
             }else if(ans==nums[i]){
                 ans++;
                 i++;
+            }else if(ans<nums[i]){
+                break;
             }
         }
         return ans;
