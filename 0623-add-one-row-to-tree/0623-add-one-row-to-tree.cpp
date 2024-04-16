@@ -10,36 +10,27 @@
  * };
  */
 class Solution {
-public:
-    
-    void f(TreeNode* root,int val,int d)
-    {
-        if(root==nullptr || d==0)return ;
-        if(d==1)
-        {
+public:   
+    TreeNode* addOneRow(TreeNode* root, int val, int depth) {
+      if(root==NULL)return  root;
+        if(depth==0)return root;
+        if(depth==1){
+            TreeNode* nr = new TreeNode(val);
+            nr->left = root;
+            nr->right = nullptr;
+            return nr;
+        }
+        if(depth==2){
             TreeNode* l = root->left;
             TreeNode* r = root->right;
             root->left = new TreeNode(val);
             root->right = new TreeNode(val);
             root->left->left = l;
             root->right->right = r;
-            d--;
+            return root;
         }
-        f(root->left,val,d-1);
-        f(root->right,val,d-1);
-        
-    }
-    TreeNode* addOneRow(TreeNode* root, int val, int depth) {
-      if(root==NULL)return  root;
-        if(depth==0)return root;
-        if(depth==1)
-        {
-            TreeNode* node = new TreeNode(val);
-            node->left = root;
-            node->right = nullptr;
-            return node;
-        }
-        f(root,val,depth-1);
+        addOneRow(root->left,val,depth-1);
+        addOneRow(root->right,val,depth-1);
         return root;
     }
 };
