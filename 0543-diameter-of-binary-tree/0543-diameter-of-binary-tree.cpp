@@ -18,7 +18,7 @@ public:
     }
     
     int rec(TreeNode* root, int &d) {
-        if(root == NULL) return 0;
+        if(!root) return 0;
         int ld = rec(root->left, d);
         int rd = rec(root->right, d);
         d=max(d,ld+rd);
