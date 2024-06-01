@@ -1,10 +1,8 @@
-class Solution(object):
-    def scoreOfString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        total =0
-        for i in range (0,len(s)-1):
-            total += abs(ord(s[i]) - ord(s[i + 1]))
-        return total
+class Solution:
+    def scoreOfString(self, s: str) -> int:
+
+        score = 0
+        for i in range(len(s)-1):
+            score += abs(ord(s[i]) - ord(s[i+1]))
+        
+        return score
