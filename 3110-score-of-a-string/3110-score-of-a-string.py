@@ -1,10 +1,10 @@
-class Solution {
-public:
-    int scoreOfString(string s) {
-        int total = 0;
-        for(int i = 0; i < s.size() - 1; i++) {
-            total += abs(s[i] - s[i + 1]);
-        }
-        return total;
-    }
-};
+class Solution(object):
+    def scoreOfString(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        total =0
+        for i in range (0,len(s)-1):
+            total += abs(ord(s[i]) - ord(s[i + 1]))
+        return total
