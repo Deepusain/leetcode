@@ -10,5 +10,5 @@ public:
             ans = min(ans, nums[nums.size() - (3 - i) - 1] - nums[i]);
         }
         return ans;
-    }
+    } 
 };
