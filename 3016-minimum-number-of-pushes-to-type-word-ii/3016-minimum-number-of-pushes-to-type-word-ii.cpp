@@ -8,7 +8,7 @@ public:
         sort(cnt.rbegin(), cnt.rend());
         int ans = 0;
         for (int i = 0; i < 26; ++i) {
-            ans += (i / 8 + 1) * cnt[i];
+            ans += ((i / 8 )+ 1) * cnt[i];
         }
         return ans;
     }
