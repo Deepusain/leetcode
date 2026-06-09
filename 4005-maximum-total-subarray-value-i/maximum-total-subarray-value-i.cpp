@@ -12,10 +12,11 @@ public:
                 max_val = nums[i];
             }
         }
-        long long single_max_value = max_val - min_val;
-        return single_max_value * k;
         // 1LL ka mtlb h ki long long ki data type h jiski multiply krne se chhota type (int) apne aap bade type (long long)
-        // return 1LL*(max_val - min_val)* k;
+        return 1LL*(max_val - min_val)* k;
+
+        // long long single_max_value = max_val - min_val;
+        // return single_max_value * k;
 
     }
 };
