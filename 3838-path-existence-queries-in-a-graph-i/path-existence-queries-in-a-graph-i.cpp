@@ -1,7 +1,6 @@
 class Solution {
 public:
-    vector<bool> pathExistenceQueries(int n, vector<int>& nums, int maxDiff,
-                                      vector<vector<int>>& queries) {
+    vector<bool> pathExistenceQueries(int n, vector<int>& nums, int maxDiff,vector<vector<int>>& queries) {
         vector<int> cmp(n);
 
         for (int i = 1; i < n; i++) {
