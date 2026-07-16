@@ -1,5 +1,10 @@
 class Solution {
 public:
+    int GCD (int a,int b){
+        if(b%a==0)return a;
+        int res =GCD(b%a,a);
+        return res;
+    }
     long long gcdSum(vector<int>& nums) {
         vector<int> prefixGcd;
         int mx=0;
@@ -7,7 +12,7 @@ public:
             if(i>mx){
                 mx=i;
             }
-            int k=gcd(i,mx);
+            int k=GCD(i,mx);
             prefixGcd.push_back(k);
         }
         sort(prefixGcd.begin(),prefixGcd.end());
@@ -15,7 +20,7 @@ public:
         int j=prefixGcd.size()-1;
         long long res=0;
         while(i<j){
-            res+=gcd(prefixGcd[i],prefixGcd[j]);
+            res+=GCD(prefixGcd[i],prefixGcd[j]);
             i++;
             j--;
         }
