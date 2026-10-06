@@ -3,7 +3,6 @@ public:
     int minAddToMakeValid(string s) {
         int left=0;
         int right=0;
-        int ans=0;
         for(auto& c :s){
             if(c=='('){
                 left++;
@@ -11,10 +10,10 @@ public:
                 if(left>0){
                     left--;
                 }else{
-                    ans++;
+                    right++;
                 }
             }
         }
-        return ans+left;
+        return left+right;
     }
 };
