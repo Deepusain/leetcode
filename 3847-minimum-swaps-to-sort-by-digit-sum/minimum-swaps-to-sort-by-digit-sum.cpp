@@ -31,14 +31,14 @@ public:
         for(int i=0;i<n;i++){
             int ExpectedVal = aftersorted[i];
             int CurrVal = nums[i];
-            if(ExpectedVal == CurrVal ) continue;
-
-            int ExpectedValIdx = ValToIdx[ExpectedVal];
-            nums[i]=ExpectedVal;
-            nums[ExpectedValIdx]=CurrVal;
-            ValToIdx[ExpectedVal]=i;
-            ValToIdx[CurrVal] = ExpectedValIdx;
-            SwapCount++;
+            if(ExpectedVal != CurrVal ) {
+                int ExpectedValIdx = ValToIdx[ExpectedVal];
+                nums[i]=ExpectedVal;
+                nums[ExpectedValIdx]=CurrVal;
+                ValToIdx[ExpectedVal]=i;
+                ValToIdx[CurrVal] = ExpectedValIdx;
+                SwapCount++;
+            }
         }
         return SwapCount;
     }
